@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+
+    <div class="flex flex-row mx-4 mb-4 my-5 gap-x-5">
+
+
+
+        <div id="search-div">
+            <label for="#search-input">Search:</label>
+            <input type="text" name="q"
+            hx-get="/computers/{{ db_name }}/{{ table_name }}"
+            hx-trigger="keyup changed delay:500ms"
+            hx-target="#table-whole"
+            hx-include="[name='nb']"
+            placeholder=" type in..."
+            id="search-input"
+            class="border-2 border-black-300"
+            >   
+        </div>
+      
+
+        <div id="limit-div">
+            <label for="#nber-input">#computers max:</label>
+            <input type="text" name="nb"
+            hx-get="/computers/{{ db_name }}/{{ table_name }}"
+            hx-trigger="keyup changed delay:500ms"
+            hx-target="#table-whole"
+            hx-include="[name='q']"
+            placeholder=" type in..."
+            id="nber-input"
+            class="border-2 border-black-300"
+            >
+        </div>
+
+ 
+        <div id="nb-computers">
+            ( total:
+            {{ nb_computers }} )
+        </div>
+
+    </div>
+
+
+    <div class="mx-4">
+        <p class="text-2xl font-bold mb-4">
+            <table class="min-w-[50%] mb-4" id="table-whole">
+                {% include 'table.html' %}
+            </table>
+        </p>
+
+    </div>
+
+</head>
+<body>
+    
+</body>
+</html>

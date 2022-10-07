@@ -1,0 +1,25 @@
+
+
+<thead class="border-b text-lg">
+    <tr>
+        {% for col in columnnames %} 
+            <th class="border">{{ col[0] }}</th>
+        {% endfor %}
+    </tr>
+</thead>
+
+
+<tbody class="text-center text-sm">
+
+    {% for computer in computers %}
+
+        <tr>
+            {% for coll in computer %}
+                <td class="border">{{ coll }}</td>
+            {% endfor %}
+        </tr>
+
+    {% endfor %}
+
+</tbody>
+
