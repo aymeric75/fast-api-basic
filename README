@@ -2,7 +2,7 @@ Basic API built on FastAPI
 
 Allows to POST, GET, DELETE informations on PostgreSQL databases
 
-Once the databases+tables+columns are created server side, you can post on IP_ADDRESS:8000/computers (or using the brower with IP_ADDRESS:8000/computers/docs) something like:
+Once the databases+tables+columns are created server side, you can post on IP_ADDRESS:8000/computers (or using the browser with IP_ADDRESS:8000/computers/docs) something like:
 
 {
 	db_name : "anythingyouwant",
@@ -18,7 +18,7 @@ Once the databases+tables+columns are created server side, you can post on IP_AD
 }	
 
 
-(a auto-increment id column (int) and a created_time column (string) are automatically created during the POST)
+(an auto-increment id column (int) and a created_time column (string) are automatically created during the POST)
 
 
 Front-end created with Tailwindcss and Htmlx (no Javascript required !): access it with IP_ADDRESS:8000/computers/{db_name}/{table_name}
